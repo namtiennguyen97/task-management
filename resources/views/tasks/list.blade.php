@@ -3,7 +3,7 @@
 @section('content')
     <div class="col-12">
         <div class="row-12">
-            <h1>Danh sach Task Manager</h1>
+            <h1 style="background-color: black"><a style="color: white">Danh sach</a> <a style="color: orangered">Dien vien yeu thich</a></h1>
         </div>
         <div class="col-12">
             @if(\Illuminate\Support\Facades\Session::has('success'))
