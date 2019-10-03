@@ -1,9 +1,9 @@
 @extends('home')
-@section('title','Danh sach task')
+@section('title','PornHub')
 @section('content')
     <div class="col-12">
         <div class="row-12">
-            <h1 style="background-color: black"><a style="color: white">Danh sach</a> <a style="color: orangered">Dien vien yeu thich</a></h1>
+            <h1 style="background-color: black; width: 175px"><b><a style="color: white">Porn</a><b style="color: orange">Hub</b></a></h1>
         </div>
         <div class="col-12">
             @if(\Illuminate\Support\Facades\Session::has('success'))
@@ -14,12 +14,12 @@
         </div>
         <table class="table table-striped">
             <thead>
-            <tr>
-                <th scope="col">STT</th>
-                <th scope="col">Title</th>
-                <th scope="col">Content</th>
-                <th scope="col">Due-date</th>
-                <th scope="col">Image</th>
+            <tr style="background-color: #636b6f">
+                <th style="color: orange" scope="col">STT</th>
+                <th style="color: orange" scope="col">Idol</th>
+                <th style="color: orange" scope="col">Content</th>
+                <th style="color: orange" scope="col">Due-date</th>
+                <th style="color: orange" scope="col">Image</th>
                 <th></th>
                 <th></th>
             </tr>
@@ -35,8 +35,8 @@
                         <td>{{$value->content}}</td>
                         <td>{{$value->due_date}}</td>
                         <td><img src="{{asset("storage/".$value->image)}}" style="width: 90px;height: 90px"> </td>
-                        <td><a href="{{route('tasks.edit', $value->id)}}">Sua</a></td>
-                        <td><a href="{{route('tasks.destroy', $value->id)}}" class="text-danger" onclick="return confirm('Ban muon xoa?')">Xoa</a></td>
+                        <td><a href="{{route('tasks.edit', $value->id)}}">Edit</a></td>
+                        <td><a href="{{route('tasks.destroy', $value->id)}}" class="text-danger" onclick="return confirm('Do you want to delete your idol?')">Delete</a></td>
                     </tr>
                 @endforeach
             @endif

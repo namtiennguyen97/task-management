@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ValidateIdol;
 use App\Task;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
@@ -17,6 +18,9 @@ class TaskController extends Controller
      */
     public function index()
     {
+        //validate
+
+
         $task = Task::all();
         return view('tasks.list',compact('task'));
     }
@@ -37,8 +41,9 @@ class TaskController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ValidateIdol $request)
     {
+
         $task = new Task();
         $task->title = $request->input('title');
         $task->content = $request->input('content');
@@ -85,7 +90,7 @@ class TaskController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ValidateIdol $request, $id)
     {
         $task = Task::findOrFail($id);
         $task->title = $request->input('title');
